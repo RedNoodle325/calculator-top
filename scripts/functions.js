@@ -9,8 +9,9 @@ function add(num1, num2) {
 }
 
 // Subtract -
-function subtract(numArr) {
-  
+function subtract(num1, num2) {
+  num2 = 0 - num2;
+  return add(num1, num2);
 }
 
 // Multiply *

@@ -1,46 +1,63 @@
-// User Interface Functionality
+// State variables
+let num1 = '';
+let num2 = '';
+let operator = '';
+let result = '';
+const outputScreen = document.querySelector('.output-screen');
 
-const opChoices = /^[+\-*/=]$/;
-let selections = [];
-let num1 = undefined;
-let num2 = undefined;
-let op = undefined;
-let string1 = '', string2 = '';
-
-// TODO-1: Button Click --> Numbers on screen and added to array
-
-// TODO-2: Operators --> perform calculation and create a new array with just the result so you can continue adding
-function operate(num1, num2, op) {
-  if (opChoices.test(op)) {
-    if (op === "+") {
-      return add(num1, num2);
-    } else if (op === "-") {
-      return subtract(num1, num2);
-    } else if (op === "*") {
-      return multiply(num1, num2);
-    } else if (op === "/") {
-      return divide(num1, num2);
-    }
-  } else {
-    console.log("wrong operator");
+// Helper function to perform operations
+function operate(num1, num2, operator) {
+  num1 = parseFloat(num1);
+  num2 = parseFloat(num2);
+  switch (operator) {
+    case '+': return num1 + num2;
+    case '-': return num1 - num2;
+    case '*': return num1 * num2;
+    case '/': return num2 !== 0 ? num1 / num2 : 'Error';
+    default: return '';
   }
 }
-const buttons = document.querySelectorAll(".buttons div");
 
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const buttonValue = button.innerText;
-    if (opChoices.test(buttonValue)){
-      op = buttonValue;
+// Event delegation for button clicks
+document.querySelector('.buttons').addEventListener('click', (e) => {
+  const value = e.target.dataset.value;
+  if (!value) return; // Ignore clicks outside buttons
+
+  // Handle numbers
+  if (!isNaN(value) || value === '.') {
+    if (operator) {
+      num2 += value; // Building second number
+      outputScreen.textContent = num2;
     } else {
-      if (op !== undefined){
-        string2.append(buttonValue);
-      } else {
-        string1.append(buttonValue);
-      }
+      num1 += value; // Building first number
+      outputScreen.textContent = num1;
     }
-    num1 = parseInt(string1);
-    num2 = parseInt(string2);
-    operate(num1,num2,op);
-  });
+  }
+
+  // Handle operators
+  else if ('+-*/'.includes(value)) {
+    if (num1 && num2) {
+      // Perform operation if both numbers exist
+      num1 = operate(num1, num2, operator).toString();
+      num2 = '';
+    }
+    operator = value; // Set new operator
+    outputScreen.textContent = num1;
+  }
+
+  // Handle equals
+  else if (value === '=') {
+    if (num1 && num2 && operator) {
+      result = operate(num1, num2, operator);
+      outputScreen.textContent = result;
+      num1 = result.toString();
+      num2 = '';
+      operator = '';
+    }
+  }
+
+  // Handle error case or invalid operations
+  else {
+    outputScreen.textContent = 'Error';
+  }
 });
