@@ -1,30 +1,51 @@
 # Calculator Project
 
-This is a simple web-based calculator built as a project to practice HTML, CSS, and JavaScript skills. It features a clean user interface and basic arithmetic operations.
+This project is a visually appealing, interactive, and functional calculator built using **HTML**, **CSS**, and **JavaScript**. It was designed as part of a learning journey to strengthen web development skills.
 
 ## Features
-- Addition, Subtraction, Multiplication, and Division
-- Responsive and interactive button design
-- Keyboard and mouse input support (if implemented)
+
+- **Basic Arithmetic Operations**: Perform addition, subtraction, multiplication, and division.
+- **Error Handling**: Displays clear messages for invalid operations (e.g., division by zero).
+- **Interactive Design**: Button animations and dynamic display for user feedback.
+- **Responsive Layout**: Optimized for various screen sizes.
 
 ## Technologies Used
-- **HTML**: For the structure of the calculator.
-- **CSS**: For styling the calculator with modern design principles.
-- **JavaScript**: For implementing the logic and interactivity of the calculator.
+
+1. **HTML**: Defines the structure and layout of the calculator.
+2. **CSS**: Styles the interface with custom fonts, colors, and modern design aesthetics.
+3. **JavaScript**: Implements the core logic and interactivity.
 
 ## How to Use
-1. Clone this repository by copying its URL and using it with your Git client.
-2. Open the `index.html` file in any web browser.
+
+1. **Clone the Repository**: Use `git clone <repository_url>` to download the project files.
+2. **Open in Browser**: Open the `index.html` file in your preferred browser.
+3. **Interact**: Click the buttons to input numbers and operations. The result is displayed dynamically on the output screen.
 
 ## File Structure
-- **`index.html`**: Main structure of the calculator.
-- **`styles.css`**: Contains styles for the calculator's layout and buttons.
-- **`interface.js`**: Handles the calculator's logic and user interaction.
+
+- **`index.html`**: Contains the layout of the calculator, including buttons and display screen.
+- **`styles.css`**: Provides styling, including fonts, colors, and layout adjustments.
+- **`interface.js`**: Manages user interactions, input handling, and arithmetic calculations.
+
+## Project Highlights
+
+- **Dynamic Output**: The display updates in real-time as the user interacts with the calculator.
+- **Custom Font**: Integrates "EuroStyle Normal" for a sleek and modern appearance.
+- **Accessibility**: Designed with clear color contrasts and interactive feedback.
 
 ## Future Enhancements
-- Add support for scientific calculations.
-- Implement better error handling for invalid inputs.
-- Make the design more responsive for mobile devices.
+
+- Add keyboard input support for faster operation.
+- Extend functionality to include scientific operations (e.g., square root, exponentiation).
+- Improve responsiveness for smaller devices.
+- Implement user-defined themes.
 
 ## Author
-Created by **Zak Klinedinst** as part of a learning project.
+
+**Zak Klinedinst**  
+Service Project Manager  
+**Contact**: zak.klinedinst@munters.com | 978.434.6022
+
+## Acknowledgments
+
+- Inspired by various online coding challenges and learning resources.
