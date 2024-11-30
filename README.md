@@ -43,8 +43,7 @@ This project is a visually appealing, interactive, and functional calculator bui
 ## Author
 
 **Zak Klinedinst**  
-Service Project Manager  
-**Contact**: zak.klinedinst@munters.com | 978.434.6022
+**Contact**: zak.klinedinst@proton.me
 
 ## Acknowledgments
 
