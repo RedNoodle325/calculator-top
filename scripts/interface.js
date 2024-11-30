@@ -4,7 +4,7 @@ let num2 = '';
 let operator = '';
 let result = '';
 const outputScreen = document.querySelector('.output-screen');
-
+outputScreen.textContent = "0";
 // Helper function to perform operations
 function operate(num1, num2, operator) {
   num1 = parseFloat(num1);
@@ -21,15 +21,15 @@ function operate(num1, num2, operator) {
 // Event delegation for button clicks
 document.querySelector('.buttons').addEventListener('click', (e) => {
   const value = e.target.dataset.value;
-  if (!value) return; // Ignore clicks outside buttons
+  if (!value) return; 
 
   // Handle numbers
   if (!isNaN(value) || value === '.') {
     if (operator) {
-      num2 += value; // Building second number
+      num2 += value;
       outputScreen.textContent = num2;
     } else {
-      num1 += value; // Building first number
+      num1 += value; 
       outputScreen.textContent = num1;
     }
   }
@@ -37,12 +37,21 @@ document.querySelector('.buttons').addEventListener('click', (e) => {
   // Handle operators
   else if ('+-*/'.includes(value)) {
     if (num1 && num2) {
-      // Perform operation if both numbers exist
       num1 = operate(num1, num2, operator).toString();
       num2 = '';
     }
-    operator = value; // Set new operator
+    operator = value; 
     outputScreen.textContent = num1;
+  }
+
+  //Handle All Clear & Clear Entry
+  else if (value === 'AC' || value == 'CE'){
+    num2 = '';
+    if (value === 'AC') {
+      num1 = '';
+      op = '';
+    }
+    outputScreen.textContent = "0";
   }
 
   // Handle equals

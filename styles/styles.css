@@ -1,25 +1,32 @@
-html, body {
+@font-face {
+  font-family: 'EuroStyle Normal';
+  src: url('./fonts/EuroStyle Normal.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
-  background-color:#DFDFDF;
   height: 100vh;
   width: 100vw;
   align-items: center;
-  font-family: 'Courier New', Courier, monospace;
-  background-color: rgb(230, 230, 229);
+  font-family: "Courier New", Courier, monospace;
+  background-color: #a1b3a8;
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
-  height: 27em;
+  height: 33rem;
   width: 20em;
   box-sizing: border-box;
   padding: 0.5em;
-  background-color: rgb(138, 137, 148);
-  box-shadow:  10px 10px 5px 5px #5f5f5f;
+  background-color: #767b78;
+  box-shadow: 10px 10px 5px 5px #5f5f5f;
   border-top: 0.1em solid #5f5f5f;
   border-right: 0.3em solid #5f5f5f;
   border-bottom: 0.3em solid #5f5f5f;
@@ -29,10 +36,12 @@ html, body {
 
 .title {
   text-align: center;
-  color: rgb(218, 218, 241);
-  font-size: 1.5em;
+  font-family: 'EuroStyle Normal', Times, serif;
+  color: #79046b;
+  font-size: 2em;
   font-weight: 900;
   line-height: 2em;
+  letter-spacing: 0.05em;
 }
 
 .buttons {
@@ -43,44 +52,69 @@ html, body {
 }
 
 .buttons div {
-  display:flex;
-  height: 3em;
-  width: 3em;
+  aspect-ratio: 1; 
+  width: 100%; 
+  height: 3rem;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
   border: 1px solid black;
-  border-radius: .2em;
-  align-items: center;
-  justify-content: center;
-  background-color: #2323bf;
-  border-top: 0.1em solid #0f0f6f;
-  border-right: 0.3em solid #0f0f6f;
-  border-bottom: 0.3em solid #0f0f6f;
-  border-left: 0.1em solid #0f0f6f;
-  color: white;
+  border-radius: 0.2em;
+  background-color: #cacacc;
+  border-top: 0.1em solid #98989a;
+  border-right: 0.3em solid #98989a;
+  border-bottom: 0.3em solid #98989a;
+  border-left: 0.1em solid #98989a;
+  color: #000;
   box-sizing: border-box;
+  font-weight: bolder;
   cursor: pointer;
 }
 
-.buttons div:hover {
-  background: #0000f6;
-  outline: 0;
+div.twoSpace {
+  grid-column: span 2;
+  width: 7.5em;
+  background-color: #bf0000;
+  border-top: 0.1em solid darkred;
+  border-right: 0.3em solid darkred;
+  border-bottom: 0.3em solid darkred;
+  border-left: 0.1em solid darkred;
+  color: #cccccc;
 }
 
 .buttons div:active {
   transform: scale(0.98);
 }
 
+.buttons div.opBtn {
+  background-color: rgb(44, 51, 235);
+  border-top: 0.1em solid rgb(10, 4, 93);
+  border-right: 0.3em solid rgb(10, 4, 93);
+  border-bottom: 0.3em solid rgb(10, 4, 93);
+  border-left: 0.1em solid rgb(10, 4, 93);
+}
+
+#equals {
+  background-color: green;
+  border-top: 0.1em solid rgb(4, 93, 4);
+  border-right: 0.3em solid rgb(4, 93, 4);
+  border-bottom: 0.3em solid rgb(4, 93, 4);
+  border-left: 0.1em solid rgb(4, 93, 4);
+}
+
 .output-screen {
   display: flex;
-  width: 16.5em;
-  height: 3em;
-  background-color: rgb(58, 58, 58);
+  width: 16.5rem;
+  height: 2em;
+  font-size: 2rem;
+  background-color: #585858;
   align-self: center;
   box-sizing: border-box;
+  font-weight: bolder;
   border-radius: 0.5em;
-  color:#ffffff;
+  color: #ffffff;
   justify-content: right;
   align-items: center;
-  line-height:2em;
   padding-right: 0.5em;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
